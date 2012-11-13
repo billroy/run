@@ -1,6 +1,6 @@
 # The Run Library
 
-This is a little library that makes it easy to run several functions asynchronously
+This is a little Arduino library that makes it easy to run several functions asynchronously
 at specified intervals (like the Bitlash 'run' command).  Scheduling is non-preemptive
 and round-robin, so your functions can't hog the CPU.  (Don't even think of calling 
 delay(); that behavior is what this library is intended to extinguish.)
