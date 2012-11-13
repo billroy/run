@@ -5,26 +5,33 @@ at specified intervals (like the Bitlash 'run' command).  Scheduling is non-pree
 and round-robin, so your functions can't hog the CPU.  (Don't even think of calling 
 delay(); that behavior is what this library is intended to extinguish.)
 
-If you need more than 10 functions, increase NUMRUNS below.
+If you need to run more than 10 functions, increase NUMRUNS below.
 
-## Functions
+## Run Library API
 
 There are three functions:
 
-- run(function, interval); schedules your C function to run at the given interval (in ms)
+### run(function, interval)
 
-	Call this from setup()
-	Your function must be declared to be of type void myFunc(void).
+- Schedules your C function to run at the given interval (in ms)
+- Call this from setup()
+- Your function must be declared to be of type void myFunc(void).
 
-- runner(); runs the scheduled functions
+### runner()
 
-	Call this from loop() 
+- Runs the scheduled functions
+- Call this from loop() 
 
-- snooze(interval); call this to set a different function sleep interval (in ms)
+### snooze(interval)
+
+- Call this to set a different function sleep interval (in ms)
 
 ## Example
 
-Here is a simple example sketch, you'll also find it in the examples/ folder
+This example sketch toggles pin 13 every 100ms and pin 12 every 125 ms.
+
+You'll find it in the examples/run folder.
+
 
 	#include "run.h"
 	void toggle13(void) {
