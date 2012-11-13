@@ -52,7 +52,7 @@ There are three functions:
 
 	Call this from loop() 
 
-- snooze(interval); call this to set a different task sleep interval (in ms)
+- snooze(interval); call this to set a different function sleep interval (in ms)
 
 
 Here is a simple example sketch, you'll also find it in the examples/ folder

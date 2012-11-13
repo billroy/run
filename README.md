@@ -20,7 +20,7 @@ There are three functions:
 
 	Call this from loop() 
 
-- snooze(interval); call this to set a different task sleep interval (in ms)
+- snooze(interval); call this to set a different function sleep interval (in ms)
 
 ## Example
 
