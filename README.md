@@ -46,10 +46,10 @@ You'll find it in the examples/run folder.
 	}
 	void setup(void) {
 		pinMode(13, OUTPUT);
-		run(toggle13, 100);		// call run() to run toggle13 every 100 ms
+		run(toggle13, 100);		// call run() to schedule toggle13 every 100 ms
 	
 		pinMode(12, OUTPUT);
-		run(toggle12, 125);		// call runner() to run toggle12 every 125 ms
+		run(toggle12, 125);		// call run() to schedule toggle12 every 125 ms
 	}	
 	void loop(void) {
 		runner();				// call runner() to run the function scheduler
