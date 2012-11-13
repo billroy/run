@@ -2,10 +2,10 @@
 
 This is a little Arduino library that makes it easy to run several functions asynchronously
 at specified intervals (like the Bitlash 'run' command).  Scheduling is non-preemptive
-and round-robin, so your functions can't hog the CPU.  (Don't even think of calling 
+and round-robin, so your functions mustn't hog the CPU.  (Don't even think of calling 
 delay(); that behavior is what this library is intended to extinguish.)
 
-If you need to run more than 10 functions, increase NUMRUNS below.
+If you need to run more than 10 functions, increase NUMRUNS in run.cpp.
 
 ## Run Library API
 
@@ -15,7 +15,11 @@ There are three functions:
 
 - Schedules your C function to run at the given interval (in ms)
 - Call this from setup()
-- Your function must be declared to be of type void myFunc(void).
+- Your function must be declared to be of type void myFunc(void) (see toggle13 below)
+- If interval is 0 your function is run 'as often as possible'
+- Even magic can't make your 20 ms function run every 10 ms
+- So, don't let your functions hog the CPU.
+- Don't even think of calling delay()
 
 ### runner()
 
@@ -24,7 +28,7 @@ There are three functions:
 
 ### snooze(interval)
 
-- Call this to set a different function sleep interval (in ms)
+- Call this from your C function to set a different function sleep interval (in ms)
 
 ## Example
 
